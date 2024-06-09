@@ -1,5 +1,4 @@
 # Databricks notebook source
-# Databricks notebook source
 def path_exists(path):
   try:
     dbutils.fs.ls(path)
@@ -131,6 +130,17 @@ dbutils.fs.ls('wasbs://course-resources@dalhussein.blob.core.windows.net/dataset
 # MAGIC %sql
 # MAGIC create table books_from_csv as
 # MAGIC select * from csv.`wasbs://course-resources@dalhussein.blob.core.windows.net/datasets/bookstore/v1/books-csv/`
+
+# COMMAND ----------
+
+dbutils.fs.ls("wasbs://course-resources@dalhussein.blob.core.windows.net/datasets/bookstore/v1/books-csv/")
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC create table temp_books_from_csv
+# MAGIC using csv
+# MAGIC options(path "wasbs://course-resources@dalhussein.blob.core.windows.net/datasets/bookstore/v1/books-csv/export_004.csv", headers "true")
 
 # COMMAND ----------
 
