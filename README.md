@@ -1,2 +1,2 @@
 # Databricks-repo
-This is a test repo for databricks integration
+This is the repo I used to learn Databricks. Please feel free to clone this repo to learn.
